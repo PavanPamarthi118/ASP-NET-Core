@@ -1,0 +1,14 @@
+GET http://localhost:5138/games
+### 
+GET http://localhost:5138/games/1
+
+###
+POST http://localhost:5138/games
+Content-Type: application/json
+
+{
+  "Name": "Game 4",
+  "Genre": "Kids",
+  "Price": 59.99,
+  "ReleaseDate": "2023-10-01"
+}
