@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <!-- <ItemGroup>
+    <PackageReference Include="MinimalApis.Extensions" Version="0.11.0" />
+  </ItemGroup> -->
+
+  <!-- PackageReference is not working becasuse, it dosent't support .net 9.0 yet, so we need to use the source code of the package instead. -->
+
 </Project>

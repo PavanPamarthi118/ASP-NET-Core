@@ -2,9 +2,10 @@ GET http://localhost:5138/games
 ### 
 GET http://localhost:5138/games/1
 
-###
+### 
 POST http://localhost:5138/games
 Content-Type: application/json
+
 {
   "Name": "Game 4",
   "Genre": "Kids",
@@ -12,9 +13,10 @@ Content-Type: application/json
   "ReleaseDate": "2023-10-01"
 }
 
-###
+### 
 PUT http://localhost:5138/games/1
 Content-Type: application/json
+
 {
   "Id": 1,
   "Name": "Game 1 Updated",
@@ -23,5 +25,5 @@ Content-Type: application/json
   "ReleaseDate": "2023-09-01"
 }
 
-###
+### 
 DELETE http://localhost:5138/games/2
