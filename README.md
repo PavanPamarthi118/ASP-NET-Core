@@ -4,17 +4,15 @@
 ![image](https://github.com/user-attachments/assets/f60fa67b-eed4-4618-9d81-5f6e7b3df8d6)
 
 ✅ What is a Migration in EF Core / ASP.NET Core REST API?
+
 Migration in Entity Framework Core (EF Core) is a way to keep your C# model classes (your domain/entities) in sync with the database schema.
 It tracks changes you make to your model (like adding a property or a new class) and applies those changes to the database automatically through generated SQL scripts.
 
 🧠 Think of it like this:
 You’re working on a REST API with EF Core. You create a model:
 
-public class Game
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-}
+![image](https://github.com/user-attachments/assets/458f3728-e9b2-4fd5-8b8a-1360536e1158)
+
 
 Now you want to create a Games table in the database to match this class. Instead of writing SQL manually, you do this:
 
@@ -30,14 +28,7 @@ Applies the migration to the database (creates or modifies tables, columns, inde
 
 Migration File Example:
 
-migrationBuilder.CreateTable(
-    name: "Games",
-    columns: table => new
-    {
-        Id = table.Column<int>(nullable: false)
-            .Annotation("SqlServer:Identity", "1, 1"),
-        Name = table.Column<string>(nullable: true)
-    });
+![image](https://github.com/user-attachments/assets/791b55d8-2e8a-44be-a4f1-380d6e2c608d)
 
 🚀 Why Use Migrations in Your API Project?
 1. No need to write raw SQL
