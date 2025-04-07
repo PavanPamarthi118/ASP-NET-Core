@@ -3,4 +3,54 @@
 ![image](https://github.com/user-attachments/assets/559d6bee-ff32-4bb3-8775-ad168d0d8696)
 ![image](https://github.com/user-attachments/assets/f60fa67b-eed4-4618-9d81-5f6e7b3df8d6)
 
+✅ What is a Migration in EF Core / ASP.NET Core REST API?
+Migration in Entity Framework Core (EF Core) is a way to keep your C# model classes (your domain/entities) in sync with the database schema.
+It tracks changes you make to your model (like adding a property or a new class) and applies those changes to the database automatically through generated SQL scripts.
+
+🧠 Think of it like this:
+You’re working on a REST API with EF Core. You create a model:
+
+public class Game
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+Now you want to create a Games table in the database to match this class. Instead of writing SQL manually, you do this:
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+🛠️ How Migrations Work (Behind the Scenes)
+dotnet ef migrations add <name>
+EF Core looks at your model and generates a migration file with SQL operations (like CREATE TABLE, ALTER TABLE, etc.)
+
+dotnet ef database update
+Applies the migration to the database (creates or modifies tables, columns, indexes, etc.)
+
+Migration File Example:
+
+migrationBuilder.CreateTable(
+    name: "Games",
+    columns: table => new
+    {
+        Id = table.Column<int>(nullable: false)
+            .Annotation("SqlServer:Identity", "1, 1"),
+        Name = table.Column<string>(nullable: true)
+    });
+
+🚀 Why Use Migrations in Your API Project?
+1. No need to write raw SQL
+2. Keeps database and code in sync
+3. Makes team collaboration easier (migration files can be version-controlled)
+4. Useful in CI/CD pipelines
+5. You can roll back (revert) database changes easily
+
+📦 Typical Commands You’ll Use:
+Command	Purpose
+dotnet ef migrations add InitialCreate	Generate a new migration
+dotnet ef database update	Apply the latest migration to the DB
+dotnet ef migrations remove	Remove the last migration
+dotnet ef migrations list	List all applied migrations
+
 
