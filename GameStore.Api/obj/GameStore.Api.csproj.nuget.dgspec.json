@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj": {}
+    "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj": {
+    "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj",
         "projectName": "GameStore.Api",
-        "projectPath": "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj",
+        "projectPath": "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\GameStore.Api.csproj",
         "packagesPath": "C:\\Users\\pamarthi\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\obj\\",
+        "outputPath": "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "c:\\Users\\Public\\ASP NET Core\\GameStore.Api\\NuGet.Config",
+          "C:\\Users\\Public\\ASP NET Core\\GameStore.Api\\NuGet.Config",
           "C:\\Users\\pamarthi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -51,6 +51,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.2, )"

@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
   "Name": "Game 4",
-  "Genre": "Kids",
+  "GenreId": 5,
   "Price": 59.99,
   "ReleaseDate": "2023-10-01"
 }
