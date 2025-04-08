@@ -21,7 +21,7 @@ public static class GamesEndpoints
     {
         var group = app.MapGroup("games");
         // GET endpoints for games
-        group.MapGet("/", async () => Results.Ok(Games));
+        group.MapGet("/", () => Results.Ok(Games));
 
         // GET endpoint for a specific game by ID
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
@@ -47,8 +47,12 @@ public static class GamesEndpoints
             Game? game = await dbContext.Games.FindAsync(id);
             if (game is null) return Results.NotFound();
 
+            // Find the Genre by name
+            Genre? genre = await dbContext.Genres.FirstOrDefaultAsync(g => g.Name == updatedGame.Genre);
+            if (genre is null) return Results.BadRequest($"Genre '{updatedGame.Genre}' does not exist.");
+
             game.Name = updatedGame.Name;
-            game.Genre = updatedGame.Genre;
+            game.GenreId = genre.Id; // Update GenreId instead of parsing as an enum
             game.Price = updatedGame.Price;
             game.ReleaseDate = updatedGame.ReleaseDate;
 
